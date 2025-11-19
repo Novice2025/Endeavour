@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENDEAVOUR (EMPREITADA) Engine - The Pursuit of Excellence</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* Light green tint for growth/effort */
+        }
+        /* Custom styles for line clamping on the cards */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        /* Gradient for the Endeavour Title */
+        .endeavour-gradient {
+            background-image: linear-gradient(45deg, #15803d, #ca8a04); /* Green to Gold: Effort to Reward */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom style for active option selection */
+        .option-active {
+            box-shadow: 0 0 0 3px #16a34a; /* Green ring effect */
+            background-color: #f0fdf4 !important;
+            border-color: #22c55e !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header id="app-header" class="bg-green-900 shadow-xl p-4 sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 id="home-link-header" class="text-2xl font-extrabold text-white tracking-widest cursor-pointer hover:text-yellow-400 transition duration-300">
+                ENDEAVOUR (EMPREITADA) Engine <span class="text-yellow-400">🏔️</span>
+            </h1>
+            <nav class="space-x-4">
+                <button id="home-link-nav" class="text-white font-medium hover:text-yellow-400 transition duration-300 focus:outline-none">
+                    Home / Modules
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="app-content" class="container mx-auto flex-grow p-4 sm:p-6 lg:p-8">
+        <!-- Content will be injected here by JavaScript -->
+        <div class="text-center p-12 text-gray-500">Initializing ENDEAVOUR (EMPREITADA) Engine...</div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 p-4 mt-12">
+        <div class="container mx-auto text-center text-white text-sm">
+            (2025 @ ENDEAVOUR (EMPREITADA) Engine by Daby) - Sustained Purposeful Exertion.
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. DATA STRUCTURES (Focused on ENDEAVOUR / EMPREITADA / ESFORÇO) ---
+
+        const lessons = [
+            {
+                id: 1,
+                role: 'Tech Developer',
+                level: 'Júnior',
+                title: 'The Cognitive Endeavour: Mastery & Depth',
+                description: 'This module explores the **endeavour** (*o empenho intelectual*) required to master complex paradigms. It distinguishes between superficial coding and the deep, sustained exertion needed to internalize abstract concepts.',
+                kpis: [
+                    { name: 'Endeavour Metric: Conceptual Absorption Rate', description: 'Measures the velocity at which abstract concepts are converted into functional code, indicating the efficacy of the learning **endeavour** (*da jornada de aprendizado*).' },
+                    { name: 'Endeavour Metric: Deep Practice Ratio', description: 'Tracks the ratio of time spent operating at the edge of ability (*na zona de esforço*) versus executing routine, comfortable tasks.' },
+                ],
+                scenario: {
+                    title: 'The Algorithms Challenge: Alex’s Ascent',
+                    steps: [
+                        { id: 1, title: 'The Goal Identification', content: 'Alex resolves to master graph algorithms. This is not a task, but a significant **endeavour** (*uma empreitada*) requiring weeks of sustained focus.', imageAlt: 'Mountain base with a path going up' },
+                        { id: 2, title: 'The Resistance', content: 'He hits a plateau. Unlike a simple task, an **endeavour** guarantees periods of difficulty. He applies **Deep Practice**, mentally wrestling (*quebrando a cabeça*) with complex logic instead of seeking easy answers.', imageAlt: 'Person lifting heavy weights metaphor' },
+                        { id: 3, title: 'The Breakthrough', content: 'By maintaining high **Conceptual Absorption**, Alex moves from copying code to deriving it. The **endeavour** (*o esforço dedicado*) transforms his mental models.', imageAlt: 'Lightbulb illuminating a maze' },
+                        { id: 4, title: 'Mastery Achieved', content: 'Alex optimizes a core system using graphs. He realizes that technical excellence is an **endeavour** (*uma conquista contínua*), not a destination.', imageAlt: 'Flag at the summit' },
+                    ],
+                },
+                exercise: [
+                    {
+                        id: 1,
+                        text: "What distinguishes a routine task from a professional **endeavour** (*uma empreitada profissional*)?",
+                        options: ["The time of day it is performed (Timing)", "The guaranteed outcome and low risk (Comfort)", "The requirement for sustained, purposeful exertion despite uncertainty (Grit / 'Sangue no olho')", "The software tools used (Technology)"],
+                        correctAnswerIndex: 2,
+                        explanation: "An **endeavour** (*empreitada*) is defined by its demand for grit (*sangue no olho*) and sustained effort over time, whereas a task is a discrete unit of work.",
+                    },
+                ],
+            },
+            {
+                id: 2,
+                role: 'Remote Professional',
+                level: 'Sênior',
+                title: 'The Autonomy Endeavour: Self-Regulation',
+                description: 'Analyze the personal **endeavour** (*o empenho pessoal*) of maintaining elite performance without supervision. This involves the rigorous construction of habits that replace external motivation with internal drive.',
+                kpis: [
+                    { name: 'Endeavour Metric: Self-Directed Output', description: 'Quantifies high-value deliverables produced without external prompting, a key indicator of a successful autonomous **endeavour** (*iniciativa própria / correr atrás*).' },
+                    { name: 'Endeavour Metric: Routine Fidelity', description: 'Measures the adherence to a self-imposed high-performance schedule, validating the daily **endeavour** (*a disciplina diária*) of the remote worker.' },
+                ],
+                scenario: {
+                    title: 'The Architect of Time: Sarah’s System',
+                    steps: [
+                        { id: 1, title: 'The Ambition', content: 'Sarah wants to lead a major migration while working remotely. This **endeavour** (*essa empreitada*) requires absolute self-governance.', imageAlt: 'Architectural blueprint of a schedule' },
+                        { id: 2, title: 'Building the Structure', content: 'She constructs a rigid framework for deep work. This is the infrastructure of her **endeavour** (*o alicerce do seu empenho*), protecting her focus from entropy.', imageAlt: 'Scaffolding around a building' },
+                        { id: 3, title: 'Sustaining the Drive', content: 'When motivation fades, **Routine Fidelity** takes over. She acknowledges that to succeed remotely, she must overcome massive daily hurdles (*matar um leão por dia*) through discipline.', imageAlt: 'Train moving on tracks steadily' },
+                        { id: 4, title: 'Autonomous Victory', content: 'The migration succeeds. Sarah proved that the remote **endeavour** (*o desafio remoto*) is conquered through the architecture of one\'s own habits.', imageAlt: 'Trophy on a desk' },
+                    ],
+                },
+                exercise: [
+                    {
+                        id: 1,
+                        text: "In the context of remote work, what constitutes the primary **endeavour** (*o principal desafio/empenho*) for a senior professional?",
+                        options: ["Responding to Slack messages instantly (Reactivity)", "Constructing and adhering to a self-generated structure for value creation (Self-Regulation / 'Autogestão')", "Attending every social Zoom call (Presence)", "Upgrading internet speed (Infrastructure)"],
+                        correctAnswerIndex: 1,
+                        explanation: "The true **endeavour** (*a verdadeira empreitada*) of the senior remote worker is Autonomy: the active, difficult process of self-generating structure and value without an overseer.",
+                    },
+                ],
+            },
+            {
+                id: 3,
+                role: 'Team Lead',
+                level: 'Gerente',
+                title: 'The Synergistic Endeavour: Unifying Effort',
+                description: 'Explore the managerial **endeavour** (*a missão de liderança*) of aligning diverse talents into a singular vector of force. This requires converting individual friction into collective momentum.',
+                kpis: [
+                    { name: 'Endeavour Metric: Alignment Velocity', description: 'Tracks how quickly individual contributions converge towards the strategic goal, measuring the efficacy of the collective **endeavour** (*esforço conjunto*).' },
+                    { name: 'Endeavour Metric: Purpose Resonance', description: 'Evaluates the degree to which team members internalize the "Why" behind the **endeavour** (*vestir a camisa*), driving proactive engagement.' },
+                ],
+                scenario: {
+                    title: 'The Vector Alignment: Maria’s Orchestra',
+                    steps: [
+                        { id: 1, title: 'The Disparate Forces', content: 'Maria’s team is talented but scattered. Her **endeavour** (*sua missão*) is to harmonize these distinct voices into a coherent strategy.', imageAlt: 'Musicians tuning instruments chaotically' },
+                        { id: 2, title: 'Articulating the Vision', content: 'She clarifies the **Purpose Resonance**. She frames the project not as a job, but as a shared **endeavour**, encouraging everyone to fully commit (*vestir a camisa*) to the mission.', imageAlt: 'Conductor raising a baton' },
+                        { id: 3, title: 'Synchronizing Action', content: 'Through rigorous dailies, she increases **Alignment Velocity**. The team begins to move as one entity, prioritizing the **endeavour** (*o objetivo maior*) over individual egos.', imageAlt: 'Rowers moving in perfect sync' },
+                        { id: 4, title: 'Collective Impact', content: 'The project launches with precision. Maria successfully led the **endeavour** (*conduziu a empreitada*) by transforming a group of people into a unified force.', imageAlt: 'Symphony orchestra playing' },
+                    ],
+                },
+                exercise: [
+                    {
+                        id: 1,
+                        text: "How does a leader transform a group of employees into partners in a shared **endeavour** (*numa empreitada comum*)?",
+                        options: ["By offering more vacation days (Perks)", "By strictly enforcing clock-in times (Micro-management)", "By articulating a compelling 'Why' that aligns individual purpose with the collective goal (Purpose / 'Propósito')", "By reducing the workload significantly (Ease)"],
+                        correctAnswerIndex: 2,
+                        explanation: "An **endeavour** (*empreitada*) requires emotional investment. Articulating the Purpose connects the daily grind to a meaningful outcome, fueling sustained collective effort.",
+                    },
+                ],
+            },
+            {
+                id: 4,
+                role: 'Startup Founder',
+                level: 'Executivo',
+                title: 'The Visionary Endeavour: Building from Zero',
+                description: 'Confront the existential **endeavour** (*a empreitada visionária*) of creating value from nothing. This involves the sheer will to impose a new reality on a skeptical market through resilience and innovation.',
+                kpis: [
+                    { name: 'Endeavour Metric: Value Creation Velocity', description: 'Measures the rate at which raw resources are converted into market-validated utility, the heartbeat of the startup **endeavour** (*da jornada empreendedora*).' },
+                    { name: 'Endeavour Metric: Strategic Grit Score', description: 'Quantifies the persistence in pursuing the long-term vision despite short-term obstacles, essential for any significant **endeavour** (*levar a cabo a missão*).' },
+                ],
+                scenario: {
+                    title: 'The Zero to One: Daniel’s Creation',
+                    steps: [
+                        { id: 1, title: 'The Blank Slate', content: 'Daniel starts with an idea and no resources. This is the ultimate **endeavour** (*a grande aposta*): willing a product into existence.', imageAlt: 'Empty canvas or whitespace' },
+                        { id: 2, title: 'The Grind', content: 'He applies **Strategic Grit**. While others quit at the first hurdle, he treats obstacles as part of the **endeavour**, getting his hands dirty (*botando a mão na massa*) to fix early issues.', imageAlt: 'Sculptor chiseling stone' },
+                        { id: 3, title: 'Capturing Value', content: 'He focuses on **Value Creation Velocity**. Every day must yield progress. The **endeavour** (*a empreitada*) demands tangible movement, not just activity.', imageAlt: 'Speedometer rising' },
+                        { id: 4, title: 'Realization', content: 'The product achieves product-market fit. Daniel’s **endeavour** (*seu empenho*) has crystallized a vision into a viable enterprise.', imageAlt: 'Skyscraper blueprint turning into real building' },
+                    ],
+                },
+                exercise: [
+                    {
+                        id: 1,
+                        text: "What defines the founder's **endeavour** (*a empreitada do fundador*) compared to a standard managerial role?",
+                        options: ["Managing existing processes (Optimization)", "The creation of new value structures from uncertainty (Zero to One / 'Fazer acontecer do nada')", "Ensuring compliance with regulations (Safety)", "Maximizing quarterly dividends immediately (Extraction)"],
+                        correctAnswerIndex: 1,
+                        explanation: "The founder's **endeavour** (*empreitada*) is existential creation—taking the risk to build something where nothing existed before ('Zero to One').",
+                    },
+                ],
+            },
+            {
+                id: 5,
+                role: 'Political Strategist',
+                level: 'Líder Público',
+                title: 'The Civic Endeavour: Mobilizing Will',
+                description: 'Analyze the complex **endeavour** (*o empenho cívico*) of driving legislative or social change. This requires the sustained mobilization of public will and the intricate weaving of coalitions.',
+                kpis: [
+                    { name: 'Endeavour Metric: Coalition Density', description: 'Measures the strength and diversity of alliances formed. A successful political **endeavour** (*articulação política*) relies on a dense network of support.' },
+                    { name: 'Endeavour Metric: Narrative Penetration', description: 'Tracks how deeply the core message of the **endeavour** (*da causa*) permeates public discourse, shifting the window of political possibility.' },
+                ],
+                scenario: {
+                    title: 'The Reform Act: The Senator’s Campaign',
+                    steps: [
+                        { id: 1, title: 'The Necessary Change', content: 'The Senator proposes a controversial but needed reform. This is a high-stakes **endeavour** (*uma bandeira difícil de carregar*).', imageAlt: 'Bill document on a desk' },
+                        { id: 2, title: 'Weaving the Net', content: 'He focuses on **Coalition Density**. He spends months dining with opponents and allies, treating persuasion as a disciplined **endeavour** (*um trabalho de formiguinha*).', imageAlt: 'Spiderweb of connections' },
+                        { id: 3, title: 'Winning the Narrative', content: 'He drives **Narrative Penetration**, simplifying the complex law into a story of national necessity. The **endeavour** (*o esforço*) shifts from policy to storytelling.', imageAlt: 'Megaphone broadcasting waves' },
+                        { id: 4, title: 'Legislative Victory', content: 'The bill passes. It was not luck, but the result of a calculated, multi-year **endeavour** (*uma articulação de longo prazo*).', imageAlt: 'Gavel banging in approval' },
+                    ],
+                },
+                exercise: [
+                    {
+                        id: 1,
+                        text: "In a political **endeavour** (*numa articulação política*), what is often more critical than the technical details of the policy?",
+                        options: ["The font size of the document (Aesthetics)", "The sustained building of a broad, durable coalition (Alliances / 'Costura política')", "The speed at which it is written (Haste)", "The number of pages in the bill (Volume)"],
+                        correctAnswerIndex: 1,
+                        explanation: "Politics is the art of the possible. The **endeavour** (*a empreitada*) succeeds or fails based on the strength of the alliances ('Costura política') built to support it, not just the text itself.",
+                    },
+                ],
+            },
+        ];
+
+        // --- 2. GLOBAL STATE AND NAVIGATION ---
+        const AppState = {
+            currentPageId: null, // null for Home, ID for Lesson Detail
+            scenarioSteps: {} // Stores the current step for each lesson ID
+        };
+
+        const appContent = document.getElementById('app-content');
+
+        // --- 3. RENDERING FUNCTIONS ---
+
+        const renderHowToUse = () => {
+             return `
+                <section class="bg-green-50 p-6 rounded-xl shadow-inner border border-green-200 mt-8">
+                    <h3 class="text-3xl font-extrabold text-green-800 mb-4 flex items-center">
+                        <span class="mr-3 text-4xl">🏔️</span> Understanding the ENDEAVOUR (EMPREITADA) Engine
+                    </h3>
+                    <p class="text-lg text-green-700 mb-6 font-semibold">
+                        Success is not accidental; it is the result of an **Endeavour** (*Empreitada / Empenho*)—a sustained, purposeful exertion towards a high-value goal.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Step 1 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-4 border-green-600">
+                            <h4 class="font-bold text-xl text-green-800 mb-2">1. Define the Undertaking (A Empreitada)</h4>
+                            <p class="text-gray-600 text-sm">Select the module that matches your current challenge. Is it a learning journey? A leadership mission? A creative build? Name your **Endeavour** (*Nomeie sua empreitada*).</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-4 border-yellow-500">
+                            <h4 class="font-bold text-xl text-yellow-800 mb-2">2. Track the Exertion (O Esforço / A Ralação)</h4>
+                            <p class="text-gray-600 text-sm">Use the **Endeavour Metrics** to quantify your effort. Are you just busy, or are you applying **Conceptual Absorption** and **Strategic Grit**?</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="bg-white p-4 rounded-lg shadow-md border-t-4 border-blue-600">
+                            <h4 class="font-bold text-xl text-blue-800 mb-2">3. Sustain the Drive (A Constância)</h4>
+                            <p class="text-gray-600 text-sm">Walk through the scenarios to see how professionals maintain the intensity of an **Endeavour** (*o pique da jornada*) over long periods to achieve mastery.</p>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        const renderHome = () => {
+            const lessonCards = lessons.map(lesson => {
+                // Color mapping based on role/level
+                let borderColor = 'border-gray-400';
+                let badgeBg = 'bg-gray-200';
+                let badgeText = 'text-gray-800';
+
+                if (lesson.level === 'Executivo' || lesson.level.includes('Líder')) {
+                    borderColor = 'border-red-600';
+                    badgeBg = 'bg-red-100';
+                    badgeText = 'text-red-800';
+                } else if (lesson.level === 'Gerente') {
+                    borderColor = 'border-yellow-500';
+                    badgeBg = 'bg-yellow-100';
+                    badgeText = 'text-yellow-800';
+                } else if (lesson.level === 'Sênior') {
+                    borderColor = 'border-blue-500';
+                    badgeBg = 'bg-blue-100';
+                    badgeText = 'text-blue-800';
+                } else {
+                    borderColor = 'border-green-500';
+                    badgeBg = 'bg-green-100';
+                    badgeText = 'text-green-800';
+                }
+
+                return `
+                    <div data-id="${lesson.id}" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-t-4 ${borderColor} cursor-pointer lesson-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">${lesson.role}</h3>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full shadow-sm ${badgeBg} ${badgeText}">
+                                ${lesson.level}
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-3">${lesson.title}</h4>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">${lesson.description}</p>
+                        <div class="text-xs font-semibold text-gray-700 flex items-center mt-2">
+                            Begin this Endeavour (*Iniciar Empreitada*) &rarr;
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            appContent.innerHTML = `
+                <div class="space-y-8">
+                    <header class="text-center py-8 bg-white rounded-xl shadow-md border-b-4 border-green-600">
+                        <h2 class="text-5xl font-black mb-2 endeavour-gradient">
+                            ENDEAVOUR (EMPREITADA) Engine 🏔️
+                        </h2>
+                        <p class="text-xl text-gray-600">
+                            Strategies for sustained, purposeful exertion and the pursuit of professional excellence.
+                        </p>
+                    </header>
+
+                    ${renderHowToUse()}
+                    
+                    <h3 class="text-3xl font-bold text-gray-700 border-b pb-2 mt-12">Select Your Endeavour (*Sua Empreitada*)</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${lessonCards}
+                    </div>
+                </div>
+            `;
+
+            // Event Listeners
+            document.querySelectorAll('.lesson-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    const id = parseInt(card.getAttribute('data-id'));
+                    navigateTo(id);
+                });
+            });
+        };
+
+        const renderLessonDetail = (lesson) => {
+            const kpiList = lesson.kpis.map((kpi, index) => `
+                <div key="${index}" class="p-4 border border-green-200 rounded-lg bg-white shadow-sm">
+                    <p class="font-semibold text-lg text-gray-900 flex items-center">
+                        <span class="text-green-600 mr-2 text-2xl">⚡</span> ${kpi.name}
+                    </p>
+                    <p class="text-sm text-gray-600 mt-1">${kpi.description}</p>
+                </div>
+            `).join('');
+
+            appContent.innerHTML = `
+                <div class="space-y-10">
+                    <button id="back-to-list-btn" class="text-green-700 hover:text-green-900 transition duration-200 flex items-center mb-6">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Back to Endeavours
+                    </button>
+                    
+                    <header class="text-center py-6 bg-green-800 text-white rounded-xl shadow-xl">
+                        <p class="text-sm font-light uppercase opacity-80">${lesson.role} | Level ${lesson.level}</p>
+                        <h2 class="text-3xl font-black mt-1 mb-2">${lesson.title}</h2>
+                        <p class="text-lg font-medium opacity-90 mx-auto max-w-3xl">
+                            ${lesson.description}
+                        </p>
+                    </header>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-yellow-500">
+                        <h3 class="text-2xl font-bold text-gray-700 mb-4">Endeavour (*Empenho*) Metrics</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            ${kpiList}
+                        </div>
+                    </div>
+
+                    <div id="scenario-container"></div>
+                    <div id="exercise-container"></div>
+                </div>
+            `;
+
+            document.getElementById('back-to-list-btn').addEventListener('click', () => navigateTo(null));
+
+            renderScenarioStepper(lesson);
+            renderExercise(lesson);
+        };
+
+        const renderScenarioStepper = (lesson) => {
+            const container = document.getElementById('scenario-container');
+            const lessonId = lesson.id;
+            
+            if (AppState.scenarioSteps[lessonId] === undefined) {
+                AppState.scenarioSteps[lessonId] = 0;
+            }
+            let currentStep = AppState.scenarioSteps[lessonId];
+            const totalSteps = lesson.scenario.steps.length;
+            const currentStepData = lesson.scenario.steps[currentStep];
+            const progress = ((currentStep + 1) / totalSteps) * 100;
+
+            container.innerHTML = `
+                <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-700">The Path of Endeavour: ${lesson.scenario.title}</h3>
+                    <p class="text-sm text-gray-500 italic mb-4">Tracing the steps of the undertaking (*os passos da empreitada*).</p>
+                    
+                    <div class="mb-6">
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-2 bg-green-600 rounded-full transition-all duration-500" style="width: ${progress}%"></div>
+                        </div>
+                        <p class="text-right text-sm text-gray-600 mt-1">Phase ${currentStep + 1} of ${totalSteps}</p>
+                    </div>
+                    
+                    <div class="p-4 bg-green-50 border-l-4 border-green-600 rounded-lg mb-6">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">${currentStepData.title}</h4>
+                        <p class="text-gray-700 whitespace-pre-line leading-relaxed">${currentStepData.content}</p>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button id="prev-step-btn" 
+                            class="px-4 py-2 rounded-full font-medium transition duration-300 shadow-md text-sm ${currentStep === 0 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-green-700 text-white hover:bg-green-800'}"
+                            ${currentStep === 0 ? 'disabled' : ''}>
+                            &larr; Previous
+                        </button>
+                        <button id="next-step-btn" 
+                            class="px-4 py-2 rounded-full font-medium transition duration-300 shadow-md text-sm ${currentStep === totalSteps - 1 ? 'bg-yellow-500 text-white cursor-not-allowed' : 'bg-blue-600 text-white hover:bg-blue-700'}"
+                            ${currentStep === totalSteps - 1 ? 'disabled' : ''}>
+                            ${currentStep === totalSteps - 1 ? 'Endeavour Analyzed!' : 'Next Phase \u2192'}
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('prev-step-btn').addEventListener('click', () => {
+                AppState.scenarioSteps[lessonId] = Math.max(currentStep - 1, 0);
+                renderScenarioStepper(lesson);
+            });
+            document.getElementById('next-step-btn').addEventListener('click', () => {
+                AppState.scenarioSteps[lessonId] = Math.min(currentStep + 1, totalSteps - 1);
+                renderScenarioStepper(lesson);
+            });
+        };
+
+        const renderExercise = (lesson) => {
+            const container = document.getElementById('exercise-container');
+            const lessonId = lesson.id;
+            const questions = lesson.exercise;
+
+            if (!AppState.exerciseState) AppState.exerciseState = {};
+            if (!AppState.exerciseState[lessonId]) {
+                AppState.exerciseState[lessonId] = {
+                    selectedAnswers: Array(questions.length).fill(null),
+                    submitted: false
+                };
+            }
+
+            let state = AppState.exerciseState[lessonId];
+            const score = questions.filter((q, i) => state.selectedAnswers[i] === q.correctAnswerIndex).length;
+            const isComplete = state.selectedAnswers.every(a => a !== null);
+            
+            const handleSelect = (qIndex, aIndex) => {
+                if (state.submitted) return;
+                state.selectedAnswers[qIndex] = aIndex;
+                renderExercise(lesson); 
+            };
+
+            const handleSubmit = () => {
+                state.submitted = true;
+                renderExercise(lesson);
+                document.getElementById('exercise-results')?.scrollIntoView({ behavior: 'smooth' });
+            };
+
+            const handleReset = () => {
+                state.submitted = false;
+                state.selectedAnswers = Array(questions.length).fill(null);
+                renderExercise(lesson); 
+            };
+
+            const scoreDisplay = state.submitted ? `
+                <div id="exercise-results" class="p-4 mb-6 bg-green-100 border-l-4 border-green-500 text-green-900 font-bold text-lg rounded-md">
+                    Analysis Result: ${score}/${questions.length}. Discipline is key to the **Endeavour** (*ao empenho*)!
+                </div>
+            ` : '';
+
+            const questionMarkup = questions.map((q, qIndex) => {
+                const optionsMarkup = q.options.map((option, aIndex) => {
+                    let optionClasses = '';
+                    let prefix = '';
+                    const isSelected = state.selectedAnswers[qIndex] === aIndex;
+                    const isCorrect = q.correctAnswerIndex === aIndex;
+                    
+                    if (!state.submitted) {
+                        optionClasses = isSelected ? 'option-active' : 'hover:bg-green-100 cursor-pointer';
+                    } else {
+                        if (isCorrect) {
+                            optionClasses = 'bg-green-100 border-green-500 font-bold';
+                            prefix = '✅ ';
+                        } else if (isSelected) {
+                            optionClasses = 'bg-red-100 border-red-500 font-bold opacity-70';
+                            prefix = '❌ ';
+                        } else {
+                            optionClasses = 'bg-gray-100 opacity-50';
+                        }
+                    }
+
+                    return `
+                        <div 
+                            class="p-3 border rounded-lg transition duration-200 text-sm option-select ${optionClasses}"
+                            data-qindex="${qIndex}" 
+                            data-aindex="${aIndex}"
+                            ${state.submitted ? 'style="pointer-events: none;"' : ''}
+                        >
+                            ${prefix}${option}
+                        </div>
+                    `;
+                }).join('');
+
+                const explanationMarkup = state.submitted ? `
+                    <div class="mt-3 text-sm p-3 bg-gray-100 border-l-2 border-green-500 rounded-br-lg rounded-bl-lg">
+                        <p class="font-bold text-green-700">Endeavour Insight (*Lição da Empreitada*):</p>
+                        <p class="text-gray-600">${q.explanation}</p>
+                    </div>
+                ` : '';
+
+                return `
+                    <div class="mb-8 p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                        <p class="font-semibold mb-3 text-lg text-gray-800">
+                            ${qIndex + 1}. ${q.text}
+                        </p>
+                        <div class="space-y-2">
+                            ${optionsMarkup}
+                        </div>
+                        ${explanationMarkup}
+                    </div>
+                `;
+            }).join('');
+            
+            const buttonMarkup = !state.submitted ? `
+                <button
+                    id="submit-quiz-btn"
+                    class="w-full bg-green-700 text-white font-bold py-3 rounded-lg hover:bg-green-800 transition duration-300 ${!isComplete ? 'disabled:bg-gray-400 disabled:cursor-not-allowed' : 'shadow-md'}"
+                    ${!isComplete ? 'disabled' : ''}
+                >
+                    Verify Understanding
+                </button>
+            ` : `
+                <button
+                    id="reset-quiz-btn"
+                    class="w-full bg-yellow-500 text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition duration-300 shadow-md"
+                >
+                    Re-Analyze Endeavour
+                </button>
+            `;
+
+            container.innerHTML = `
+                <div class="mt-8 p-6 bg-white rounded-xl shadow-lg border-t-4 border-green-400">
+                    <h3 class="text-3xl font-extrabold text-gray-700 mb-6 border-b pb-2">
+                        Test Your Resolve 🧠
+                    </h3>
+                    ${scoreDisplay}
+                    ${questionMarkup}
+                    ${buttonMarkup}
+                </div>
+            `;
+
+            document.querySelectorAll('.option-select').forEach(optionDiv => {
+                optionDiv.addEventListener('click', (e) => {
+                    const qIndex = parseInt(optionDiv.getAttribute('data-qindex'));
+                    const aIndex = parseInt(optionDiv.getAttribute('data-aindex'));
+                    handleSelect(qIndex, aIndex);
+                });
+            });
+
+            if (document.getElementById('submit-quiz-btn')) {
+                document.getElementById('submit-quiz-btn').addEventListener('click', handleSubmit);
+            }
+            if (document.getElementById('reset-quiz-btn')) {
+                document.getElementById('reset-quiz-btn').addEventListener('click', handleReset);
+            }
+        };
+
+        // --- 4. NAVIGATION & INIT ---
+
+        const navigateTo = (id) => {
+            AppState.currentPageId = id;
+            window.scrollTo(0, 0);
+
+            if (id === null) {
+                renderHome();
+            } else {
+                const lesson = lessons.find(l => l.id === id);
+                if (lesson) {
+                    renderLessonDetail(lesson);
+                } else {
+                    appContent.innerHTML = `<div class="text-center p-12 text-red-500 text-xl">Module not found.</div>`;
+                }
+            }
+        };
+
+        window.onload = () => {
+            document.getElementById('home-link-header').addEventListener('click', () => navigateTo(null));
+            document.getElementById('home-link-nav').addEventListener('click', () => navigateTo(null));
+            navigateTo(null);
+        };
+    </script>
+</body>
+</html>
